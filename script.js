@@ -22,8 +22,36 @@ function playRound(playerSelection, computerSelection) {
             break;
     }
 
-    let playerLossMessage = "You lost (╯°□°)╯︵ ┻━┻ " + computerSelection + " beats " + playerSelection;
-    let playerWinMessage = "You won (ง ͡ʘ ͜ʖ ͡ʘ)ง " + playerSelection + " beats " + computerSelection;
+    let LossMessage = "You lost (╯°□°)╯︵ ┻━┻ " + computerSelection + " beats " + playerSelection;
+    let WinMessage = "You won (ง ͡ʘ ͜ʖ ͡ʘ)ง " + playerSelection + " beats " + computerSelection;
 
-    return playerWon ? playerWinMessage : playerLossMessage;
+    return playerWon ? WinMessage : LossMessage;
+}
+
+function playGame(numberOfRounds) {
+    let playerScore = 0;
+    let computerScore = 0;
+
+    while (playerScore < numberOfRounds && computerScore < numberOfRounds) {
+        let playerChoice = prompt("Please choose a value between Rock,Paper and Scissors and write it :");
+        let computerChoice = getComputerChoice();
+        let result = playRound(playerChoice, computerChoice);
+
+        alert(result);
+
+        if (result.startsWith("You lost")) {
+            computerScore++;
+            continue;
+        }
+
+        if (result.startsWith("You won")) {
+            playerScore++;
+        }
+    }
+
+    let playerWon = playerScore > computerScore ? true : false;
+    let winMessage = "You won, " + playerScore + " to " + computerScore;
+    let lossMessage = "You Lost, " + playerScore + " to " + computerScore;
+
+    playerWon ? alert(winMessage) : alert(lossMessage);
 }
