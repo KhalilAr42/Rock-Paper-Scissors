@@ -28,12 +28,24 @@ function playRound(playerSelection, computerSelection) {
     return playerWon ? WinMessage : LossMessage;
 }
 
-function playGame(numberOfRounds) {
+function getPlayerChoice() {
+    let validGameChoices = ["rock", "paper", "scissors"];
+    let playerChocie = prompt("Please choose a value between Rock,Paper and Scissors and write it :");
+    while (true) {
+        if (validGameChoices.includes(playerChocie.toLowerCase())) {
+            return playerChocie;
+        }
+        alert("Please choose a valid option : Rock, Paper Or Scissors");
+        playerChocie = prompt("Enter your choice : ");
+    }
+}
+
+function playGame(numberOfRounds = 5) {
     let playerScore = 0;
     let computerScore = 0;
 
     while (playerScore < numberOfRounds && computerScore < numberOfRounds) {
-        let playerChoice = prompt("Please choose a value between Rock,Paper and Scissors and write it :");
+        let playerChoice = getPlayerChoice();
         let computerChoice = getComputerChoice();
         let result = playRound(playerChoice, computerChoice);
 
