@@ -1,3 +1,5 @@
 function getComputerChoice() {
-    return Math.floor(Math.random() * 3);
+    let gameChoices = ["rock", "paper", "scissors"];
+    let randomIndex = Math.floor(Math.random() * 3);
+    return gameChoices[randomIndex];
 }
