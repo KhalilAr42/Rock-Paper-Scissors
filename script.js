@@ -23,7 +23,7 @@ function playRound(playerSelection, computerSelection) {
     }
 
     let LossMessage = "You lost (╯°□°)╯︵ ┻━┻ " + computerSelection + " beats " + playerSelection;
-    let WinMessage = "You won (ง ͡ʘ ͜ʖ ͡ʘ)ง " + playerSelection + " beats " + computerSelection;
+    let WinMessage = "You won ง( ͡ʘ ͜ʖ ͡ʘ)ง " + playerSelection + " beats " + computerSelection;
 
     return playerWon ? WinMessage : LossMessage;
 }
@@ -67,3 +67,5 @@ function playGame(numberOfRounds = 5) {
 
     playerWon ? alert(winMessage) : alert(lossMessage);
 }
+
+playGame();
