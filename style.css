@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: "Press Start 2P", system-ui;
+}
+
+.title {
+    background-color: #f3f1f1;
+    text-align: center;
+    padding: 24px 0px;
+    margin: 0;
+    font-size: 32px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.player-choices,
+.computer-choices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.instruction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-container {
+    display: flex;
+    gap: 128px;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons-container {
+    display: flex;
+    height: 700px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.btn-card {
+    padding: 48px;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-card:hover {
+    cursor: pointer;
+}
+
+.sign {
+    font-size: 64px;
+}
+
+footer {
+    background-color: #f3f1f1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5px;
+    height: 69px;
+}
+
+a:visited {
+    color: black;
+}
+
+.socials i {
+    margin-left: 18px;
+    transition: all 500ms;
+}
+
+.socials i:hover {
+    transform: scale(1.5);
+}

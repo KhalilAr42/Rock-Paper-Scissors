@@ -67,5 +67,3 @@ function playGame(numberOfRounds = 5) {
 
     playerWon ? alert(winMessage) : alert(lossMessage);
 }
-
-playGame();
