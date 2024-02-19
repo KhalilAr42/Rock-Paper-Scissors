@@ -23,6 +23,11 @@ body {
     align-items: center;
 }
 
+.player-choices h2,
+.computer-choices h2 {
+    margin-bottom: 0;
+}
+
 .scoreboard {
     display: flex;
     flex-direction: column;
@@ -51,19 +56,26 @@ body {
 
 .buttons-container {
     display: flex;
-    height: 700px;
+    height: 685px;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .btn-card {
     padding: 48px;
     border: none;
     border-radius: 10px;
+    background-color: #f3f1f1;
 }
 
 .btn-card:hover {
     cursor: pointer;
+    background-color: #dddddd;
+}
+
+.btn-card:focus {
+    cursor: pointer;
+    background-color: #b4b4b4;
 }
 
 .sign {
