@@ -9,6 +9,29 @@ const computerSign = document.querySelector("#computerSign");
 const scoreInfo = document.querySelector("#scoreInfo");
 const scoreStatus = document.querySelector("#scoreStatus");
 
+buttons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+        let target = event.currentTarget;
+        switch (target.querySelector(".sign").id) {
+            case "rock":
+                playerChoice = "rock";
+                handlePlayerChoice(playerChoice);
+                break;
+            case "paper":
+                playerChoice = "paper";
+                handlePlayerChoice(playerChoice);
+                break;
+            case "scissors":
+                playerChoice = "scissors";
+                handlePlayerChoice(playerChoice);
+                break;
+            default:
+                console.log("weird, error !");
+                break;
+        }
+    });
+});
+
 function getComputerChoice() {
     let gameChoices = ["rock", "paper", "scissors"];
     let randomIndex = Math.floor(Math.random() * 3);
