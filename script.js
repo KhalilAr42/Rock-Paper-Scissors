@@ -1,3 +1,14 @@
+const buttons = document.querySelectorAll(".player-choices .btn-card");
+
+const playerScorepara = document.querySelector("#playerScore");
+const computerScorepara = document.querySelector("#computerScore");
+
+const playerSign = document.querySelector("#playerSign");
+const computerSign = document.querySelector("#computerSign");
+
+const scoreInfo = document.querySelector("#scoreInfo");
+const scoreStatus = document.querySelector("#scoreStatus");
+
 function getComputerChoice() {
     let gameChoices = ["rock", "paper", "scissors"];
     let randomIndex = Math.floor(Math.random() * 3);

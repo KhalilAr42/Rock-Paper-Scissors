@@ -19,7 +19,7 @@
         />
         <link rel="stylesheet" href="style.css" />
         <title>Rock Paper Scissors</title>
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
     </head>
     <body>
         <h1 class="title">Rock Paper Scissors</h1>
@@ -28,27 +28,27 @@
             <div class="player-choices">
                 <h2>Player</h2>
                 <div class="buttons-container">
-                    <button class="btn-card"><span class="sign">✊</span></button>
-                    <button class="btn-card"><span class="sign">✋</span></button>
-                    <button class="btn-card"><span class="sign">✌</span></button>
+                    <div class="btn-card"><span class="sign" id="rock">✊</span></div>
+                    <div class="btn-card"><span class="sign" id="paper">✋</span></div>
+                    <div class="btn-card"><span class="sign" id="scissors">✌</span></div>
                 </div>
             </div>
 
             <div class="scoreboard">
                 <div class="instruction">
-                    <h2>Click on your choice</h2>
-                    <p>First to score 5 wins</p>
+                    <h2 id="scoreInfo">Click on your choice</h2>
+                    <p id="scoreStatus">First to score 5 wins</p>
                 </div>
 
                 <div class="score-container">
                     <div class="score">
-                        <div class="sign">❔</div>
-                        <p class="score">Player: 0</p>
+                        <div class="sign" id="playerSign">❔</div>
+                        <p id="playerScore">Player: 0</p>
                     </div>
 
                     <div class="score">
-                        <div class="sign">❔</div>
-                        <p class="score">Computer: 0</p>
+                        <div class="sign" id="computerSign">❔</div>
+                        <p id="computerScore">Computer: 0</p>
                     </div>
                 </div>
             </div>
