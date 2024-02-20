@@ -1,6 +1,9 @@
 body {
     margin: 0;
     font-family: "Press Start 2P", system-ui;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .title {
