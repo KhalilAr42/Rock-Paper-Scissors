@@ -12,6 +12,10 @@ const computerSign = document.querySelector("#computerSign");
 const scoreInfo = document.querySelector("#scoreInfo");
 const scoreStatus = document.querySelector("#scoreStatus");
 
+const playAgainButton = document.createElement("button");
+
+const scoreContainerDiv = document.querySelector(".scoreboard");
+
 buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
         let target = event.currentTarget;
@@ -35,48 +39,48 @@ buttons.forEach((button) => {
     });
 });
 
+playAgainButton.addEventListener("click", () => resetGame());
+
 function handlePlayerChoice(playerChoice) {
+    if (isGameOver(playerScore, computerScore)) {
+        playAgainButton.textContent = "Play Again";
+        playAgainButton.classList.add("play-again");
+        scoreContainerDiv.appendChild(playAgainButton);
+        showFinalScore(playerScore, computerScore);
+        return;
+    }
+
     const computerChoice = getComputerChoice();
     let result = playRound(playerChoice, computerChoice);
     updateSign(playerChoice, computerChoice);
     updateScore(result, playerChoice, computerChoice);
+
+    if (isGameOver(playerScore, computerScore)) {
+        playAgainButton.textContent = "Play Again";
+        playAgainButton.classList.add("play-again");
+        scoreContainerDiv.appendChild(playAgainButton);
+        showFinalScore(playerScore, computerScore);
+        return;
+    }
 }
 
-function updateSign(playerChoice, computerChoice) {
-    switch (playerChoice) {
-        case "rock":
-            playerSign.textContent = "✊";
-            break;
-        case "paper":
-            playerSign.textContent = "✋";
-            break;
-        case "scissors":
-            playerSign.textContent = "✌";
-            break;
-    }
+function isGameOver(playerScore, computerScore) {
+    return playerScore == 5 || computerScore == 5;
+}
 
-    switch (computerChoice) {
-        case "rock":
-            computerSign.textContent = "✊";
-            break;
-        case "paper":
-            computerSign.textContent = "✋";
-            break;
-        case "scissors":
-            computerSign.textContent = "✌";
-            break;
+function showFinalScore(playerScore, computerScore) {
+    if (playerScore > computerScore) {
+        scoreInfo.textContent = "You won ง( ͡ʘ ͜ʖ ͡ʘ)ง";
+        scoreStatus.textContent = capitalize("You") + " beat the computer : " + playerScore + " to " + computerScore;
+    }
+    if (playerScore < computerScore) {
+        scoreInfo.textContent = "You lost (╯°□°)╯︵ ┻━┻";
+        scoreStatus.textContent = capitalize("You") + " lost to the computer : " + playerScore + " to " + computerScore;
     }
 }
 
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.substring(1);
-}
-
-function handlePlayerChoice(playerChoice) {
-    const computerChoice = getComputerChoice();
-    let result = playRound(playerChoice, computerChoice);
-    updateSign(playerChoice, computerChoice);
-    updateScore(result, playerChoice, computerChoice);
 }
 
 function updateSign(playerChoice, computerChoice) {
@@ -151,4 +155,16 @@ function playRound(playerSelection, computerSelection) {
     }
 
     return playerWon ? "player" : "computer";
+}
+
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    playerSign.textContent = "❔";
+    computerSign.textContent = "❔";
+    scoreInfo.textContent = "Click on your choice";
+    scoreStatus.textContent = "First to score 5 wins";
+    playerScorepara.textContent = "Player: " + playerScore;
+    computerScorepara.textContent = "Computer: " + computerScore;
+    playAgainButton.remove();
 }

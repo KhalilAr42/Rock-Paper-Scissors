@@ -73,8 +73,9 @@ body {
     background-color: #dddddd;
 }
 
-.btn-card:focus {
+.btn-active {
     cursor: pointer;
+    border: 3px solid black;
     background-color: #b4b4b4;
 }
 
@@ -102,4 +103,16 @@ a:visited {
 
 .socials i:hover {
     transform: scale(1.5);
+}
+
+.play-again {
+    font-family: inherit;
+    padding: 24px 52px;
+    border: 2px solid black;
+    background-color: #f3f1f1;
+}
+
+.play-again:hover {
+    cursor: pointer;
+    background-color: #dddddd;
 }
