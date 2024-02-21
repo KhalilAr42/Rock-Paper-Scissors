@@ -111,17 +111,17 @@ function updateSign(playerChoice, computerChoice) {
 
 function updateScore(result, playerChoice, computerChoice) {
     if (result == "player") {
-        computerScore++;
-        computerScorepara.textContent = "Computer: " + computerScore;
+        playerScore++;
         scoreInfo.textContent = "You won ง( ͡ʘ ͜ʖ ͡ʘ)ง ";
         scoreStatus.textContent = capitalize(playerChoice) + " beats " + capitalize(computerChoice);
+        playerScorepara.textContent = "Player: " + playerScore;
     }
 
     if (result == "computer") {
-        playerScore++;
-        playerScorepara.textContent = "Player: " + playerScore;
+        computerScore++;
         scoreInfo.textContent = "You lost (╯°□°)╯︵ ┻━┻";
-        scoreStatus.textContent = capitalize(playerChoice) + " beats " + capitalize(computerChoice);
+        scoreStatus.textContent = capitalize(computerChoice) + " beats " + capitalize(playerChoice);
+        computerScorepara.textContent = "Computer: " + computerScore;
     }
 
     if (result == "Draw") {
