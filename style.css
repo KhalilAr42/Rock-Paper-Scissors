@@ -97,12 +97,15 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 5px;
     height: 69px;
 }
 
 a:visited {
     color: black;
+}
+
+.socials {
+    display: flex;
 }
 
 .socials i {
@@ -125,4 +128,81 @@ a:visited {
 .play-again:hover {
     cursor: pointer;
     background-color: #dddddd;
+    margin-top: 24px;
+}
+
+.short-text {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        margin: 32px 0px;
+    }
+    .play-again {
+        margin-bottom: 32px;
+    }
+
+    .player-choices h2,
+    .computer-choices h2 {
+        margin-top: 0px;
+        margin-bottom: 32px;
+    }
+
+    .buttons-container {
+        height: fit-content;
+        flex-direction: row;
+        gap: 48px;
+    }
+
+    .scoreboard {
+        flex-basis: 350px;
+        gap: 15px;
+    }
+
+    .instruction p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .full-text {
+        display: none;
+    }
+
+    .short-text {
+        display: block;
+    }
+
+    .instruction h2 {
+        text-align: center;
+    }
+
+    .instruction p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 568px) {
+    .title {
+        line-height: 1.5;
+    }
+
+    .btn-card {
+        padding: 24px;
+    }
+
+    .buttons-container {
+        gap: 24px;
+    }
+
+    .instruction h2 {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .score-container {
+        gap: 32px;
+    }
 }
