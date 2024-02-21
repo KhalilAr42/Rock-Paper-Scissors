@@ -128,7 +128,6 @@ a:visited {
 .play-again:hover {
     cursor: pointer;
     background-color: #dddddd;
-    margin-top: 24px;
 }
 
 .short-text {
