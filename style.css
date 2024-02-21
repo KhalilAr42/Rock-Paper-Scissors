@@ -102,6 +102,7 @@ a:visited {
 
 .socials i {
     margin-left: 18px;
+    color: black;
     transition: all 500ms;
 }
 
