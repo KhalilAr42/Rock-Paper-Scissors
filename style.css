@@ -71,6 +71,9 @@ body {
     border: none;
     border-radius: 10px;
     background-color: #f3f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-card:hover {
@@ -86,6 +89,7 @@ body {
 
 .sign {
     font-size: 64px;
+    color: #ffd43b;
 }
 
 footer {

@@ -84,27 +84,42 @@ function capitalize(word) {
 }
 
 function updateSign(playerChoice, computerChoice) {
+    const rock = document.createElement("i");
+    rock.classList.add("sign", "fa-solid", "fa-hand-fist", "fa-5x");
+
+    const paper = document.createElement("i");
+    paper.classList.add("sign", "fa-solid", "fa-hand", "fa-5x");
+
+    const scissors = document.createElement("i");
+    scissors.classList.add("sign", "fa-solid", "fa-hand-peace", "fa-5x");
+
     switch (playerChoice) {
         case "rock":
-            playerSign.textContent = "✊";
+            playerSign.textContent = "";
+            playerSign.appendChild(rock.cloneNode(true));
             break;
         case "paper":
-            playerSign.textContent = "✋";
+            playerSign.textContent = "";
+            playerSign.appendChild(paper.cloneNode(true));
             break;
         case "scissors":
-            playerSign.textContent = "✌";
+            playerSign.textContent = "";
+            playerSign.appendChild(scissors.cloneNode(true));
             break;
     }
 
     switch (computerChoice) {
         case "rock":
-            computerSign.textContent = "✊";
+            computerSign.textContent = "";
+            computerSign.appendChild(rock.cloneNode(true));
             break;
         case "paper":
-            computerSign.textContent = "✋";
+            computerSign.textContent = "";
+            computerSign.appendChild(paper.cloneNode(true));
             break;
         case "scissors":
-            computerSign.textContent = "✌";
+            computerSign.textContent = "";
+            computerSign.appendChild(scissors.cloneNode(true));
             break;
     }
 }
